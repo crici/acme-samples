@@ -1,3 +1,6 @@
 // Include application subprojects
 include(":apps:consumer")
 
+include(":comps:somelib")
+
+
