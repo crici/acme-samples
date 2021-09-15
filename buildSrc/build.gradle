@@ -1,0 +1,13 @@
+plugins {
+    id 'java-gradle-plugin'
+}
+
+gradlePlugin {
+    plugins {
+
+        create('acme-native-conventions') {
+            id = 'com.acme.native-conventions'
+            implementationClass = "com.acme.gradle.plugins.ntv.NativeConventionsPlugin"
+        }
+    }
+}
