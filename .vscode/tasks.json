@@ -1,0 +1,27 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Gradle - assemble (DEBUG)",
+            "command": "${workspaceFolder}/gradlew",
+            "args": [
+                ":apps:consumer:assembleDebugLinux"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Gradle - assemble",
+            "command": "${workspaceFolder}/gradlew",
+            "args": [
+                ":assemble"
+            ],
+            "problemMatcher": []
+        }        
+    ],
+    "version": "2.0.0"
+}

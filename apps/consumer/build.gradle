@@ -12,4 +12,16 @@ application {
         machines.linux.x86_64,
         machines.macOS.x86_64
     ]
+
+    dependencies {
+      implementation( project(":comps:somelib") )
+    }
+
+    binaries.configureEach {
+      def compileTask = compileTask.get()
+      def linkTask = linkTask.get()
+
+      compileTask.macros.put("STATIC_LINKAGE", "1")
+      linkTask.linkerArgs.add "-static"
+    }
 }

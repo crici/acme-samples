@@ -3,11 +3,27 @@
 
 
 #ifdef _WIN32
-    #define SOMELIBAPI
+    #ifdef BUILD_SHARED_LIBRARY
+        #define SOMELIBAPI __declspec(dllexport)
+    #else
+        #ifdef STATIC_LINKAGE
+            #define SOMELIBAPI  
+        #else
+            #define SOMELIBAPI __declspec(dllimport)
+        #endif
+    #endif
 #else
     #define SOMELIBAPI
 #endif
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 SOMELIBAPI int somelib_add( int a, int b );
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
